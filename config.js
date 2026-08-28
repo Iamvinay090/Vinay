@@ -30,19 +30,17 @@ const CONFIG = {
     closingSubtitle: "From, your forever",
     
     // Love Letter Text (types out character by character on scroll)
-    letterText: `To My Dearest,
+    letterText: `To My Dearest Radhe,
 
-I am writing this little note just because you have been on my mind all day long, which is nothing new since you pretty much live there anyway.
+Pehele toh bohot bohot HAPPY WALA BIRTHDAY humari ONE AND ONLY ❤️RADHE❤️ ko.
 
-Every single time I think about your smile, my heart does a tiny happy dance. I find myself smiling at my phone like a complete fool whenever your name pops up, and honestly, it is my absolute favorite part of the day.
+Bhai dekho pehele toh aaj aapka original wala janmadin hai☝, voh fake vala janmdin hum bhul jate wish karna toh uske liye Kshma mangte aapse.
 
-You have this wonderful way of making the whole world feel brighter and sweeter just by being you. Thank you for all the warm hugs, the soft giggles we share, and the beautiful comfort of knowing you are mine.
+And aap dekho bade hote jaa rhe voh baat alag hai ☝ but aap toh humare liye alawys baby hi rhenge"❤️chotu si pyaari si baby ji❤️ "
 
-Being your boyfriend is the happiest thing that has ever happened to me, and I count myself incredibly lucky to hold your hand and walk through life beside you.
+Btw iss saal "❤️MUH TODH DUNGI❤️ " ka count thoda kam rha iss baat ka hunme khaid rhega ☝,  kahin aapne iss baar hume pyaar kam toh nhi kiya ?!?!, but koi baat nhi iss baar ek sath MUHH TODH DENA yr aap toh❤️❤️.
 
-Please never forget how deeply you are loved and cherished. You are my favorite person, my safest space, and my absolute dream come true.
-
-I love you more than all the stars in the night sky, and I cannot wait until the next time I get to hold you close.
+Aise hi sada humari rheiye aap,   aur har saal aur cutie hote jaiye,   Dhanywaad krte hum aapka to have you in my life,   Har cheez mai humara sath dene ke liye,  for cheering me in everything , chota bada doesn't matter❤️, Thankyou for everything❤️ , Humare sath hain aap thats my win already ,   Firse aapka ek baar bohot bohot dhanywad krte hum har cheej ke liye jo bhi aap humare liye krte ❤️.
 
 Forever and always yours,
 Your Love`,
@@ -51,38 +49,38 @@ Your Love`,
     photos: [
         {
             url: "assets/images/cutiee.jpeg",
-            caption: "Our favorite coffee date ❤️",
+            caption: "    ",
             rotation: -3
         },
         {
             url: "assets/images/saareee.jpeg",
-            caption: "Sunset walks together ✨",
+            caption: "    ",
             rotation: 2
         },
         {
             url: "assets/images/mandir.jpeg",
-            caption: "Always laughing with you 💖",
+            caption: "     ",
             rotation: -2
         },
         {
             url: "assets/images/white.jpeg",
-            caption: "Unforgettable memories 🌸",
+            caption: "     ",
             rotation: 4
         },
         {
             url: "assets/images/sleep.jpeg",
-            caption: "My happiest place is with you 💫",
+            caption: "        ",
             rotation: -4
         },
         {
             url: "assets/images/guru.jpeg",
-            caption: "Forever and always 🌷",
+            caption: "      ",
             rotation: 3
         }
     ],
 
     // Audio / Music Settings
-    audioUrl: "assets/audio/AUDIO.mp3",
+    audioUrl: "assets/images/AUDIO.mp3",
     audioTitle: "August — Taylor Swift",
 };
 
