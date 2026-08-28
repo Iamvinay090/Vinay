@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You, My Baby — A Gift of Flowers</title>
+    <meta name="description" content="A special, romantic interactive digital gift created with love.">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gift-box.css">
+    <link rel="stylesheet" href="css/polaroid.css">
+</head>
+<body>
+
+    <!-- Background Falling Petals Canvas -->
+    <canvas id="falling-petals-canvas"></canvas>
+
+    <!-- Floating Audio Control Button -->
+    <div id="audio-control-btn" class="audio-control muted" title="Toggle Music">
+        <div class="audio-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" fill="currentColor"/>
+            </svg>
+        </div>
+        <div class="audio-bars">
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+        </div>
+    </div>
+
+    <!-- Flower Tunnel 3D Canvas Overlay -->
+    <div id="flower-tunnel-overlay">
+        <canvas id="flower-tunnel-canvas"></canvas>
+    </div>
+
+    <!-- MAIN APP CONTAINER -->
+    <main class="container">
+
+        <!-- 1. HERO GIFT BOX SECTION -->
+        <section id="hero-section" class="section">
+            <div id="gift-box-wrapper" class="gift-box-wrapper">
+                <div class="gift-box-container">
+                    <svg class="gift-box-svg" viewBox="0 0 200 200">
+                        <defs>
+                            <pattern id="sketchHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                                <line x1="0" y1="0" x2="0" y2="10" stroke="#D94B68" stroke-width="1.5" />
+                            </pattern>
+                            <filter id="handDrawn" x="-10%" y="-10%" width="120%" height="120%">
+                                <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="1" result="noise" />
+                                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G" />
+                            </filter>
+                        </defs>
+
+                        <!-- Sketchy Box Body -->
+                        <g filter="url(#handDrawn)">
+                            <rect x="40" y="85" width="120" height="90" rx="4" fill="#FDE2E4" stroke="#C72C48" stroke-width="2.5" />
+                            <rect x="40" y="85" width="120" height="90" rx="4" fill="url(#sketchHatch)" opacity="0.65" />
+                            <rect x="90" y="85" width="20" height="90" fill="#E85D75" stroke="#C72C48" stroke-width="2" />
+                            <line x1="100" y1="85" x2="100" y2="175" stroke="#FFFFFF" stroke-dasharray="3 3" stroke-width="1.5"/>
+                        </g>
+
+                        <!-- Sketchy Box Lid -->
+                        <g id="gift-lid" class="gift-lid" filter="url(#handDrawn)">
+                            <rect x="30" y="58" width="140" height="30" rx="4" fill="#FDE2E4" stroke="#C72C48" stroke-width="2.5" />
+                            <rect x="30" y="58" width="140" height="30" rx="4" fill="url(#sketchHatch)" opacity="0.65" />
+                            <rect x="90" y="58" width="20" height="30" fill="#E85D75" stroke="#C72C48" stroke-width="2" />
+                            <path d="M 100 58 C 70 30, 45 45, 92 58 Z" fill="#E85D75" stroke="#C72C48" stroke-width="2" />
+                            <path d="M 100 58 C 130 30, 155 45, 108 58 Z" fill="#E85D75" stroke="#C72C48" stroke-width="2" />
+                            <ellipse cx="100" cy="58" rx="8" ry="6" fill="#C72C48" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <h1 id="hero-title" class="hero-title">For you, my baby.</h1>
+            <p id="hero-tap-prompt" class="hero-tap-prompt">(tap to open)</p>
+        </section>
+
+        <!-- 2. TRENDING LOVE QUIZ SECTION ("Do u love me RADHEEE?") -->
+        <section id="quiz-section" class="section">
+            <h2 id="quiz-title" class="quiz-title">Do u love me RADHEEE?</h2>
+            <p id="quiz-subheader" class="quiz-subheader">Find the right button to unlock my heart... 🐰</p>
+            <div id="quiz-button-grid" class="quiz-button-grid"></div>
+        </section>
+
+        <!-- 3. POLAROID GALLERY SECTION -->
+        <section id="gallery-section" class="section">
+            <div class="section-header">
+                <h2 id="gallery-title">From me to you.</h2>
+                <p id="gallery-subtitle">This is how much I love you.</p>
+            </div>
+
+            <div id="polaroid-grid" class="polaroid-grid"></div>
+        </section>
+
+        <!-- 4. ANIMATED LOVE LETTER SECTION -->
+        <section id="letter-section" class="section">
+            <div class="letter-paper">
+                <div id="typewriter-text" class="letter-content"></div>
+            </div>
+        </section>
+
+        <!-- 5. CLOSING HEART SECTION -->
+        <section id="closing-section" class="section">
+            <svg class="heart-animation" viewBox="0 0 100 100">
+                <path d="M50 88.7L43.4 82.7C20.2 61.7 5 47.9 5 30.7C5 16.7 16 5.7 30 5.7C37.9 5.7 45.5 9.4 50 15.2C54.5 9.4 62.1 5.7 70 5.7C84 5.7 95 16.7 95 30.7C95 47.9 79.8 61.7 56.6 82.7L50 88.7Z" fill="#D96B82" />
+            </svg>
+            <h2 id="closing-title" class="closing-title">I will always love you</h2>
+            <p id="closing-subtitle" class="closing-subtitle">From, your forever</p>
+        </section>
+
+    </main>
+
+    <!-- HIDDEN SEMI-TRANSPARENT SECRET TRUE "YES" BUTTON (Bottom Right Corner) -->
+    <div id="secret-yes-btn" class="secret-yes-btn">YES! ❤️</div>
+
+    <!-- CUTE BUNNY LOOSER POPUP MODAL -->
+    <div id="bunny-modal" class="bunny-modal">
+        <div class="bunny-modal-card">
+            <div class="bunny-icon">🐰</div>
+            <p id="bunny-modal-text" class="bunny-modal-text">looser u looose try again with a bunny 🐰</p>
+            <button id="bunny-close-btn" class="bunny-close-btn">Try Again 🐰</button>
+        </div>
+    </div>
+
+    <!-- MOGAMBO EVIL TRAP POPUP MODAL -->
+    <div id="mogambo-modal" class="mogambo-modal">
+        <div class="mogambo-modal-card">
+            <div class="mogambo-img-container">
+                <img id="mogambo-img" class="mogambo-img" src="assets/images/mogambo_real.jpg" alt="Mogambo Villain">
+            </div>
+            <p id="mogambo-text" class="mogambo-text">phas gye na hamare jaaaal meee aap 😂😈</p>
+            <p id="mogambo-subtext" class="mogambo-subtext">  </p>
+            <button id="mogambo-close-btn" class="mogambo-close-btn">Try Again👆🏼 </button>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX PHOTO PREVIEW MODAL -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span id="lightbox-close" class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" class="lightbox-img" src="" alt="Memory">
+            <p id="lightbox-caption" class="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="js/flower-tunnel.js"></script>
+    <script src="js/falling-petals.js"></script>
+    <script src="js/typewriter.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
